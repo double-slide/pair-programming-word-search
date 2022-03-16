@@ -6,6 +6,10 @@
 // Function does not look for words going backwards, upwards, or diagonal
 const wordSearch = (letters, word) => {
 
+  if (word === '' || letters.length === 0) {
+    return false;
+  }
+
   const horizontalJoin = letters.map(ls => ls.join(''));
   for (let joinedLetters of horizontalJoin) {
     if (joinedLetters.includes(word)) return true;
